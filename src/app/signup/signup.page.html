@@ -1,0 +1,68 @@
+<ion-app>
+  <ion-toolbar>
+    <ion-header collapse="fade" translucent="true">
+      <ion-title class="ion-text-center" size="large">Sign Up Page</ion-title>
+    </ion-header>
+  </ion-toolbar>
+  <ion-content>
+    <ion-item>
+      <ion-label position="floating">Name:</ion-label>
+      <ion-input
+        [(ngModel)]="name"
+        placeholder="Enter Your Full Name"
+        type="text"
+        minlength="3"
+        required="true"
+        maxlength="20"
+      ></ion-input>
+      <ion-icon slot="start" name="person-outline"></ion-icon>
+      <span slot="error">Full Name should be more than 2 characters.</span>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Email:</ion-label>
+      <ion-input
+        [(ngModel)]="email"
+        placeholder="Enter Your Email"
+        type="email"
+        minlength="5"
+        required="true"
+        pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})"
+      ></ion-input>
+      <ion-icon slot="start" name="mail-outline"></ion-icon>
+      <span slot="error">Please enter a correct email.</span>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Password:</ion-label>
+      <ion-input
+        [(ngModel)]="password"
+        placeholder="Enter Your Password"
+        type="password"
+        minlength="5"
+        maxlength="15"
+        
+        required="true"
+      ></ion-input>
+      <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+      <span slot="error">Password should be between 5 to 15 characters.</span>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Confirm Password:</ion-label>
+      <ion-input
+        [(ngModel)]="confirmPassword"
+        placeholder="Confirm Your Password"
+        type="password"
+        minlength="5"
+        maxlength="15"
+        required="true"
+      ></ion-input>
+      <ion-icon slot="start" name="lock-closed-outline"></ion-icon>
+      <span slot="error">This password must match with above.</span>
+    </ion-item>
+    <ion-item></ion-item>
+
+    <ion-button expand="block" color="tertiary" fill="outline"
+    (click)="signUp()"
+      >Sign Me Up</ion-button
+    >
+  </ion-content>
+</ion-app>
